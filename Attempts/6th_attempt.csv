@@ -1,0 +1,12 @@
+﻿항목,내용
+실험 구분,6th Attempt: Domain Feature Engineering + OOF Target Stats + Multi-Seed Regularized LightGBM
+목적 함수 및 평가 지표,regression_l1 (MAE) / mae
+검증 방식,"5-Fold K-Fold (shuffle=True, random_state=42)"
+5th Attempt 검증 MAE,24.8248 초
+6th Attempt 검증 MAE (최종),24.2627 초
+6th Attempt OOF MAE,24.2627 초
+5th 대비 MAE 개선량,+0.5621 초 (개선율: +2.26%)
+핵심 기법 1 (도메인 특성),"구간 고유 ID(segment_id), 맨해튼 거리, 노선 내 상대 위치(rel_stop_seq), 24시간 주기성(sin/cos)"
+핵심 기법 2 (OOF 타깃 통계),"주말/첨두/시간대별 구간 중앙값, 동적 지체 시간(delay_h), 체감 속도(exp_speed)"
+핵심 기법 3 (정규화 트리),ExtraTrees 모드 분할 + path_smooth=1.0 적용 (리프 노이즈 평활화)
+핵심 기법 4 (멀티 시드),"LightGBM Multi-Seed(42, 2024) 블렌딩으로 예측 분산 억제"

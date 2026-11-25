@@ -1,0 +1,20 @@
+﻿항목,내용
+실험 구분,5th Attempt: Feature Selection + Optuna Hyperparameter Tuning
+검증 방식,"5-Fold K-Fold 교차 검증 (shuffle=True, random_state=42)"
+목적 함수 (objective),regression_l1 (MAE)
+평가 지표 (metric),mae
+전체 초기 피처 수,27개
+제거 피처 수 (하위 10% 및 Gain=0),"3개 (route_nm, interval_sun, is_weekend)"
+최종 선택 피처 수,24개
+튜닝 전 기준 5-Fold MAE,25.5031 초
+튜닝 후 최적 5-Fold MAE,24.8248 초
+튜닝 후 OOF MAE,24.8248 초
+MAE 개선량 (변화량),+0.6783 초 (개선율: 2.66%)
+Optuna 탐색 횟수 (n_trials),30회
+최적 파라미터: num_leaves,242
+최적 파라미터: min_child_samples,31
+최적 파라미터: max_depth,11
+최적 파라미터: colsample_bytree,0.55
+최적 파라미터: subsample,1.0
+최적 파라미터: reg_alpha,3.20979633656786e-08
+최적 파라미터: reg_lambda,4.466798970383285e-05
